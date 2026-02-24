@@ -59,10 +59,28 @@ layout: default
   </div>
   {% endif %}
 
+  {% if page.scholar %}
+  <div class="mt-2">
+    <i class="fa-brands fa-google-scholar"></i> <b>Google Scholar:</b> {{ page.display_name }}
+    <a href="https://scholar.google.com/citations?hl=en&user={{ page.scholar }}" target="_blank" class="ms-1">
+      <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>
+    </a> 
+  </div>
+  {% endif %}
+
   {% if page.lattes %}
   <div class="mt-2">
     <i class="fa-solid fa-user"></i> <b>Lattes:</b> {{ page.lattes }}
     <a href="https://lattes.cnpq.br/{{ page.lattes }}" target="_blank" class="ms-1">
+      <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>
+    </a> 
+  </div>
+  {% endif %}
+
+  {% if page.researcherid %}
+  <div class="mt-2">
+    <i class="fa-solid fa-user"></i> <b>ResearcherID:</b> {{ page.researcherid }}
+    <a href="https://www.webofscience.com/wos/author/record/{{ page.researcherid }}" target="_blank" class="ms-1">
       <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>
     </a> 
   </div>
@@ -91,4 +109,8 @@ layout: default
     </a>
   </div>
   {% endif %}
+
+
+
+
 </div>
