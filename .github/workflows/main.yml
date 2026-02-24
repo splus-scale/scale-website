@@ -36,7 +36,8 @@ jobs:
     - name: 'Ruby: Install Dependencies'
       if: steps.gemcache.outputs.cache-hit != 'true'
       run: |
-        bundle install --deployment
+        bundle config set deployment true
+        bundle install
     
     - name: 'Python: Install Dependencies'
       if: steps.pipcache.outputs.cache-hit != 'true'
