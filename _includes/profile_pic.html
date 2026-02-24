@@ -1,10 +1,29 @@
-{% assign gh_user = include.author.github_username %}
+{% assign gh_user = include.author.github %}
+{% assign local_file = site.static_files | where: "profile_image", true | where: "basename", include.author.username | first %}
 
-{% if gh_user == nil or gh_user == "" %}
-{% assign hash = include.author.username | MD5 %}
-<img src="https://www.gravatar.com/avatar/{{ hash }}.jpg?s={{ include.size }}&d=identicon" class="rounded-circle"
-  width="{{ include.size }}" />
+
+{% if local_file %}
+
+{% capture src %}
+{{ local_file.path }}
+{% endcapture %}
+
+{% elsif gh_user %}
+
+{% capture src %}
+https://github.com/{{ gh_user }}.png?size={{ include.size }}
+{% endcapture %}
+
 {% else %}
-<img src="https://github.com/{{ gh_user }}.png?size={{ include.size }}" class="rounded-circle"
-  width="{{ include.size }}" />
+
+{% assign hash = include.author.username | MD5 %}
+{% capture src %}
+https://www.gravatar.com/avatar/{{ hash }}.jpg?s={{ include.size }}&d=identicon
+{% endcapture %}
+
 {% endif %}
+
+<img 
+  src="{{ src }}" 
+  class="rounded-circle"
+  width="{{ include.size }}" />

@@ -1,15 +1,22 @@
-title: IAGML
-tagline: IAGML
-subtitle: "IAG &#8226; USP"
+title: SCALE
+tagline: SCALE
+subtitle: S-PLUS Clusters/Groups and their Large-scale Environments
 email: your-email@example.com
 description: >-
-  IAG USP
+  S-PLUS Clusters/Groups and their Large-scale Environments
+startyear: 2023
+url: "https://splus-scale.github.io"
+logo: /assets/img/scale_logo_sm.png
 baseurl: ""
-url: "https://iagml.github.io"
-twitter_username: jekyllrb
-github_username:  jekyll
+repository: https://github.com/splus-scale/scale-website
+github: splus-scale
 permalink: pretty
 timezone: "America/Sao_Paulo"
+
+social:
+  name: SCALE
+  links: 
+    - https://github.com/splus-scale
 
 paginate: 5
 paginate_path: "/blog/page:num"
@@ -23,6 +30,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-scholar
   - kramdown
   - rouge
 
@@ -70,6 +78,11 @@ defaults:
     values:
       layout: "tag"
       permalink: "/blog/tags/:title/"
+  -
+    scope:
+      path: "assets/profiles"
+    values:
+      profile_image: true
 
 include: ['_pages']
 
@@ -85,3 +98,24 @@ collections:
   tagslist:
     output: true
     layout: tag
+
+
+scholar:
+  style: the-astrophysical-journal
+  locale: en
+
+  sort_by: none
+  order: ascending
+
+  source: ./_bibliography
+  bibliography: main.bib
+  bibliography_template: ref
+
+  replace_strings: true
+  join_strings: true
+
+  # details_dir: bibliography
+  # details_layout: bibliography.html
+  # details_link: Details
+
+  query: "@*"

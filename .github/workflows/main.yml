@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v6
     - uses: actions/setup-ruby@v1
       with:
-        ruby-version: '2.6.x'
+        ruby-version: '3.4.8'
     - uses: actions/setup-python@v1
       with:
         python-version: '3.x'
@@ -22,7 +22,7 @@ jobs:
       with:
         path: '~/.cache/pip'
         key: ${{ runner.os }}-pip3-${{ hashFiles('requirements.txt') }}
-    - uses: actions/cache@v1
+    - uses: actions/cache@v5
       id: gemcache
       with:
         path: vendor/bundle
@@ -31,7 +31,7 @@ jobs:
     # Pre-build
     - name: 'Ruby: Install Bundler'
       run: |
-        gem install bundler -v '2.0.2'
+        gem install bundler -v '4.0.6'
 
     - name: 'Ruby: Install Dependencies'
       if: steps.gemcache.outputs.cache-hit != 'true'
@@ -52,9 +52,9 @@ jobs:
     # Build
     - name: 'Jekyll: Build'
       run: |
-        export PATH=`pwd`/vendor/bundle/ruby/2.6.0/bin:$PATH
-        export GEM_PATH=`pwd`/vendor/bundle/ruby/2.6.0:$GEM_PATH
-        export GEM_HOME=`pwd`/vendor/bundle/ruby/2.6.0:$GEM_HOME
+        export PATH=`pwd`/vendor/bundle/ruby/3.4.0/bin:$PATH
+        export GEM_PATH=`pwd`/vendor/bundle/ruby/3.4.0:$GEM_PATH
+        export GEM_HOME=`pwd`/vendor/bundle/ruby/3.4.0:$GEM_HOME
         JEKYLL_ENV=production bundle exec jekyll build --destination site
     
     # Deploy to GH Pages
@@ -66,5 +66,5 @@ jobs:
         git init
         git add .
         git commit --quiet -m ":rocket: Deploy to Github Pages"
-        git push --force --quiet "https://nmcardoso:${{ secrets.IAGML_GH_ACTIONS_TOKEN }}@github.com/iagml/iagml.github.io.git" master:master
+        git push --force --quiet "https://nmcardoso:${{ secrets.GITHUB_TOKEN }}@github.com/splus-scale/splus-scale.github.io.git" master:master
         

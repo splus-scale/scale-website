@@ -1,0 +1,20 @@
+{% if include.role %}
+  {% assign authors = site.authors | where: "role", include.role %}
+{% else %}
+ {% assign authors = site.authors | where: "role", empty %}
+{% endif %}
+
+<ul class="list-unstyled">
+  {% for author in authors %}
+  {% unless author.hide %}
+  <li class="mt-4 d-flex align-items-center">
+    <a class="text-dark d-flex" href="/authors/{{ author.username }}">
+      <div class="d-inline-flex align-items-center">
+        {% include profile_pic.html author=author size=30 %}
+        <span class="ps-2 fs-5">{{ author.display_name }}</span>
+      </div>
+    </a>
+  </li>
+  {% endunless %}
+  {% endfor %}
+</ul>

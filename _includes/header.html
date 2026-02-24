@@ -4,11 +4,15 @@
   <div class="container">
     <div class="row">
       <div class="col-xl-9">
-        {% if include.title %}
+        {% if include.home and site.title %}
+        <h1 {% if include.boldtitle %} class="w-600" {% endif %}>{{ site.title }}</h1>
+        {% elsif include.title %}
         <h1 {% if include.boldtitle %} class="w-600" {% endif %}>{{ include.title }}</h1>
         {% endif %}
 
-        {% if include.subtitle %}
+        {% if include.home and site.subtitle %}
+        <h2 class="w-500">{{ site.subtitle }}</h2>
+        {% elsif include.subtitle %}
         <h2 class="w-500">{{ include.subtitle }}</h2>
         {% endif %}
       </div>

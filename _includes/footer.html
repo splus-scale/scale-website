@@ -2,12 +2,9 @@
   <div class="container px-4 px-md-0">
     <div class="row">
       <div class="col-12 col-md-6 pr-lg-5">
-        <h6>IAGML</h6>
+        <h6>{{ site.title }}</h6>
         <p>
-          Sistemas inteligentes para descoberta em Astronomia:
-          Inteligência Artificial
-          para a extração de informações
-          em grandes levantamentos do céu (surveys).
+          {{ site.description }}
         </p>
 
         <h6 class="mt-4">Apoio</h6>
@@ -55,14 +52,15 @@
 
   <div class="container-fluid footer-line text-center">
     <small>
-      &copy; 2019-{{ 'now' | date: '%Y' }} <a href="http://www.iag.usp.br">IAG/USP</a> &bull;
-      Powered by <a href="https://jekyllrb.com/">Jekyll</a> <br />
-      Last build: {{ 'now' | date: '%d/%m/%Y %H:%M:%S' }}
+      &copy; {{ site.startyear }}-{{ 'now' | date: '%Y' }} {{ site.title }} | 
+      Designed by <a href="/authors/nmcardoso" target="_blank">Natanael M. Cardoso</a> &bull; 
+      Powered by <a href="https://jekyllrb.com/">Jekyll</a><br />
+      Lastest build: {{ 'now' | date: '%d/%m/%Y %H:%M:%S' }}
       {% assign commit_sha = site.env.GITHUB_SHA | default: '' %}
       {% unless commit_sha == empty %}
       &bull; Commit:
-      <a href="https://github.com/iagml/website/commit/{{ commit_sha}}">{{ commit_sha | slice: 0, 8 }}</a>
-      <a href="https://github.com/iagml/website"><i class="fab fa-github"></i></a>
+      <a href="{{ site.repository }}/commit/{{ commit_sha}}">{{ commit_sha | slice: 0, 8 }}</a>
+      <a href="{{ site.repository }}"><i class="fab fa-github"></i></a>
       {% endunless %}
     </small>
   </div>

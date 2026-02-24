@@ -1,10 +1,10 @@
-- name: Projeto
-  link: /projeto/
-- name: Recursos
-  link: /recursos/
-- name: Surveys
-  link: /surveys/
-- name: Blog
-  link: /blog/
-- name: Área de Membros
-  link: /admin/
+- name: Home
+  link: /
+- name: About
+  link: /about/
+- name: People
+  link: /people/
+- name: Publications
+  link: /publications/
+- name: Data
+  link: /data/
