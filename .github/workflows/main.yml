@@ -59,13 +59,22 @@ jobs:
         JEKYLL_ENV=production bundle exec jekyll build --destination site
     
     # Deploy to GH Pages
-    - name: 'Github Pages: Deploy'
-      run: |
-        git config --global user.email "actions@github.com"
-        git config --global user.name "Github Actions"
-        cd site
-        git init
-        git add .
-        git commit --quiet -m ":rocket: Deploy to Github Pages"
-        git push --force --quiet "https://nmcardoso:${{ secrets.GITHUB_TOKEN }}@github.com/splus-scale/splus-scale.github.io.git" master:master
+    # - name: 'Github Pages: Deploy'
+    #   run: |
+    #     git config --global user.email "actions@github.com"
+    #     git config --global user.name "Github Actions"
+    #     cd site
+    #     git init
+    #     git add .
+    #     git commit --quiet -m ":rocket: Deploy to Github Pages"
+    #     git push --force --quiet "https://nmcardoso:${{ secrets.GITHUB_TOKEN }}@github.com/splus-scale/splus-scale.github.io.git" master:master
         
+    - name: Deploy to Github Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./site
+        force_orphan: true
+        # personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        # deploy_key: ${{ secrets.DEPLOY_KEY }}
+        external_repository: splus-scale/splus-scale.github.io
