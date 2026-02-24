@@ -72,9 +72,9 @@ jobs:
     - name: Deploy to Github Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        # github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./site
         force_orphan: true
         # personal_token: ${{ secrets.PERSONAL_TOKEN }}
-        # deploy_key: ${{ secrets.DEPLOY_KEY }}
+        deploy_key: ${{ secrets.DEPLOY_KEY }}
         external_repository: splus-scale/splus-scale.github.io
