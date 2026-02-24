@@ -86,9 +86,12 @@ layout: default
   </div>
   {% endif %}
 
-  {% if page.email %}
+  {% if page.github %}
   <div class="mt-2">
-    <i class="fa-regular fa-envelope"></i> <b>E-mail:</b> {{ page.email }}
+    <i class="fa-brands fa-github"></i> <b>Github:</b> {{ page.github }}
+    <a href="https://github.com/{{ page.github }}" target="_blank" class="ms-1">
+      <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>
+    </a>
   </div>
   {% endif %}
 
@@ -101,12 +104,9 @@ layout: default
   </div>
   {% endif %}
 
-  {% if page.github %}
+  {% if page.email %}
   <div class="mt-2">
-    <i class="fa-brands fa-github"></i> <b>Github:</b> {{ page.github }}
-    <a href="https://github.com/{{ page.github }}" target="_blank" class="ms-1">
-      <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>
-    </a>
+    <i class="fa-regular fa-envelope"></i> <b>E-mail:</b> {{ page.email }}
   </div>
   {% endif %}
 
