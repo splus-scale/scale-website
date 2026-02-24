@@ -14,9 +14,9 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: '3.4.8'
-    - uses: actions/setup-python@v1
-      with:
-        python-version: '3.x'
+    # - uses: actions/setup-python@v1
+    #   with:
+    #     python-version: '3.x'
     - uses: actions/cache@v5
       id: pipcache
       with:
@@ -39,16 +39,16 @@ jobs:
         bundle config set deployment true
         bundle install
     
-    - name: 'Python: Install Dependencies'
-      if: steps.pipcache.outputs.cache-hit != 'true'
-      run: |
-        pip3 install -r requirements.txt -t ~/.cache/pip --upgrade
+    # - name: 'Python: Install Dependencies'
+    #   if: steps.pipcache.outputs.cache-hit != 'true'
+    #   run: |
+    #     pip3 install -r requirements.txt -t ~/.cache/pip --upgrade
 
-    - name: 'Jupyter Notebooks: Compile'
-      run: |
-        export PYTHONPATH=$PYTHONPATH:/home/runner/.cache/pip/
-        export JUPYTER_DATA_DIR=/home/runner/.cache/pip/share/jupyter
-        ~/.cache/pip/bin/jupyter nbconvert --output-dir='./notebooks' --to html --template lab assets/uploads/*.ipynb
+    # - name: 'Jupyter Notebooks: Compile'
+    #   run: |
+    #     export PYTHONPATH=$PYTHONPATH:/home/runner/.cache/pip/
+    #     export JUPYTER_DATA_DIR=/home/runner/.cache/pip/share/jupyter
+    #     ~/.cache/pip/bin/jupyter nbconvert --output-dir='./notebooks' --to html --template lab assets/uploads/*.ipynb
 
     # Build
     - name: 'Jekyll: Build'
