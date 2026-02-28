@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+{% include header.html image="/assets/uploads/blog-bg.jpg" title="Publications" %}
+{% assign inprep = site.publications | where: 'status', 'inprep' %}
+{% assign submited = site.publications | where: 'status', 'submited' %}
+{% assign published = site.publications | where: 'status', 'published' %}
+
+<div class="container py-3">
+  <div class="row">
+    <!-- Left Column-->
+    <div class="col-lg-8" id="papers-list">
+      {% if published.size > 0 %}
+        <h3>Published</h3>
+
+        <ol>
+          {% for pub in published %}
+            <li class="mt-2">
+              <a href="{{ pub.url }}">
+                {{ pub.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ol>
+      {% endif %}
+
+
+      {% if submited.size > 0 %}
+        <h3 class="mt-4">Submited</h3>
+
+        <ol>
+          {% for pub in submited %}
+            <li class="mt-2">
+              <a href="{{ pub.url }}">
+                {{ pub.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ol>
+      {% endif %}
+
+
+      {% if inprep.size > 0 %}
+        <h3 class="mt-4">In Preparation</h3>
+
+        <ol>
+          {% for pub in inprep %}
+            <li class="mt-2">
+              <a href="{{ pub.url }}">
+                {{ pub.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ol>
+      {% endif %}
+      
+    </div>
+
+    <!-- Right Column -->
+    <div class="col-lg-4 pl-lg-4">
+      <!-- {% include blog_sidebar.html %} -->
+    </div>
+  </div>
+</div>

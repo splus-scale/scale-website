@@ -38,16 +38,18 @@ layout: default
   <h3>Personal Information</h3>
   <hr />
 
-  {% if page.institution %}
-  <div class="mt-2">
-    <i class="fa-solid fa-building-columns"></i> <b>Institution:</b> {{ page.institution }}
-  </div>
+  {% if page.affiliation %}
+    <div class="mt-2">
+      <i class="fa-solid fa-building-columns"></i> <b>Affiliation:</b> {{ page.affiliation }}
+    </div>
   {% endif %}
 
-  {% if page.address %}
-  <div class="mt-2">
-    <i class="fa-solid fa-location-dot"></i> <b>Address:</b> {{ page.address }}
-  </div>
+  {% if page.affiliations %}
+    {% for affiliation in page.affiliations %}
+      <div class="mt-2">
+        <i class="fa-solid fa-building-columns"></i> <b>Affiliation {{ forloop.index }}:</b> {{ affiliation }}
+      </div>
+    {% endfor %}
   {% endif %}
 
   {% if page.orcid %}
@@ -110,6 +112,33 @@ layout: default
   </div>
   {% endif %}
 
+
+
+
+
+  {%- assign filtered_publications = '' | split: '' -%}
+
+  {% for publication in site.publications %}
+    {% if publication.members contains page.username %}
+      {% assign filtered_publications = filtered_publications | push: publication %}
+    {% endif %}
+  {% endfor %}
+
+
+  {% if filtered_publications.size > 0 %}
+  <h3 class="mt-5">Publications</h3>
+  <hr />
+
+  <ol>
+    {% for publication in filtered_publications %}
+      <li class="mt-2">
+        <a href="{{ publication.url }}">
+          {{ publication.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ol>
+  {% endif %}
 
 
 

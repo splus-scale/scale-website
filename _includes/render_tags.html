@@ -2,7 +2,7 @@
   {% for tag in site.tags %}
   {% assign slug = tag[0] | parameterize %}
   <a class="chip mb-2 mr-1" href="/blog/tags/{{slug}}">
-    <span>{{ tag[0] }}</span>
+    <span class="tag">{{ tag[0] }}</span>
   </a>
   {% endfor %}
 </div>

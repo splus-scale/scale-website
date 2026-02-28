@@ -1,0 +1,109 @@
+---
+layout: default
+---
+
+{% assign title = page.shorttitle | default: page.title %}
+{% assign striped_content = page.content | strip | strip_html | strip_newlines %}
+
+{% include header.html image="/assets/img/authors_header_bg.jpg" title=title %}
+
+<div class="container pt-3 pb-5">
+  <h3>Publication info</h3>
+  <hr />
+
+  {% if page.status == "inprep" %}
+    <div class="alert alert-info" role="alert">
+      This paper is in preparation.
+    </div>
+  {% endif %}
+
+  {% if page.status == "submited" %}
+    <div class="alert alert-info" role="alert">
+      This paper has been submited to the journal.
+    </div>
+  {% endif %}
+  
+  {% if page.title %}
+    <div>
+      <b>Title: </b> {{ page.title }}
+    </div>
+  {% endif %}
+  
+  {% if page.authors %}
+    <div class="mt-3">
+      <b>Authors: </b> {{ page.authors }}
+    </div>
+  {% endif %}
+
+  {% if page.year %}
+    <div class="mt-3">
+      <b>Publication date: </b> {{ page.year }}
+    </div>
+  {% endif %}
+
+  {% if page.journal %}
+    <div class="mt-3">
+      <b>Journal: </b> {{ page.journal }}
+    </div>
+  {% endif %}
+
+  {% if page.preprint or page.doi or page.ads %}
+  <div class="mt-3">
+    <b>Access: </b> 
+    {% if page.doi %}
+      <a href="https://doi.org/{{ page.doi }}" class="me-3">Publisher<i class="fa-solid fa-arrow-up-right-from-square fa-sm ms-1"></i></a>
+    {% endif %}
+
+    {% if page.preprint %}
+      <a href="{{ page.preprint }}" class="me-3">Preprint<i class="fa-solid fa-arrow-up-right-from-square fa-sm ms-1"></i></a>
+    {% endif %}
+
+    {% if page.ads %}
+      <a href="{{ page.ads }}" class="me-3">ADS<i class="fa-solid fa-arrow-up-right-from-square fa-sm ms-1"></i></a>
+    {% endif %}
+  </div>
+  {% endif %}
+  
+  {% if page.members and page.members.size > 0 %}
+    <div class="mt-3">
+      <b>Related Members: </b> <br />
+      {% for member in page.members %}
+        {% include author_pill.html author=member %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+
+
+
+  
+  {% if page.abstract %}
+    <h3 class="mt-5">Abstract</h3>
+    <hr />
+
+    {{ page.abstract | markdownify}}
+  {% endif %}
+
+
+
+
+
+
+
+  {% unless striped_content == empty %}
+    <h3 class="mt-5">Online material</h3>
+    <hr />
+    
+    {{ content }}
+  {% endunless %}
+
+
+
+
+
+  {% if page.bibtex %}
+    <h3 class="mt-5">Citation</h3>
+    <hr />
+    {% highlight bibtex %}{{ page.bibtex }}{% endhighlight %}
+  {% endif %}
+</div>

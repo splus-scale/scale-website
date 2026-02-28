@@ -80,6 +80,14 @@ defaults:
       permalink: "/blog/tags/:title/"
   -
     scope:
+      path: ""
+      type: "publications"
+    values:
+      status: "published"
+      layout: "paper"
+      permalink: "/publications/:slug/"
+  -
+    scope:
       path: "assets/profiles"
     values:
       profile_image: true
@@ -98,6 +106,9 @@ collections:
   tagslist:
     output: true
     layout: tag
+  publications:
+    output: true
+    layout: paper
 
 
 scholar:

@@ -1,0 +1,8 @@
+{% assign a = site.authors | where: 'username', include.author | first %}
+
+<a href="{{ a.url }}" class="chip text-decoration-none me-1 mb-2">
+  {% include profile_pic.html author=a size=20 %}
+  <span class="ms-1 align-middle">
+    {{ a.display_name }}
+  </span>
+</a>
