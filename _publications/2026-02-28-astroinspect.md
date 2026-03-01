@@ -1,7 +1,7 @@
 ---
 title: AstroInspect
 journal: Astronomical Journal
-authors: Cardoso, N. M. et al.
+authors: N. M. Cardoso
 year: 2026
 status: submited
 members:
