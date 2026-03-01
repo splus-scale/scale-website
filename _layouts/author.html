@@ -115,15 +115,10 @@ layout: default
 
 
 
-
-  {%- assign filtered_publications = '' | split: '' -%}
-
-  {% for publication in site.publications %}
-    {% if publication.members contains page.username %}
-      {% assign filtered_publications = filtered_publications | push: publication %}
-    {% endif %}
-  {% endfor %}
-
+  {% assign filtered_publications = page.publications %}
+  {% if filtered_publications == nil %}
+    {% assign filtered_publications = '' | split: '' %}
+  {% endif %}
 
   {% if filtered_publications.size > 0 %}
   <h3 class="mt-5">Publications</h3>
