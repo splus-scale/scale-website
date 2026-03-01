@@ -6,31 +6,44 @@
   <meta name="image" content="{{ site.url }}{{ site.baseurl }}{{ site.logo }}" />
   <meta name="og:image" content="{{ site.url }}{{ site.baseurl }}{{ site.logo }}" />
   <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}{{ site.logo }}" />
+  
+  {% seo %}
 
   <link rel="dns-prefetch" href="https://github.com">
   <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
   <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
   <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com">
   <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link 
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
     rel="stylesheet" 
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
     crossorigin="anonymous">
+  
   <link 
     rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
     crossorigin="anonymous" 
-    referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css?v={{ site.time | date: '%s' }}">
-
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Spectral&display=swap" rel="stylesheet">
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-  {% seo %}
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pygments-css@1.0.0/github.css">
+    referrerpolicy="no-referrer">
+    
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" 
+    rel="stylesheet">
+  
+  <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/pygments-css@1.0.0/github.css">
+  
+  <link 
+    rel="stylesheet" 
+    type="text/css" 
+    href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/fonts.css">
+  
+  <link 
+    rel="stylesheet" 
+    href="{{ site.baseurl }}/assets/css/app.css?v={{ site.time | date: '%s' }}">
 </head>
