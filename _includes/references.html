@@ -1,3 +1,5 @@
-<h4 class="pt-4">References</h4>
-
-{% bibliography --cited %}
+  {% assign pub_count = bibliography_count --cited %}
+  {% if pub_count > 0 %}
+    <h1>References</h1>
+    {% bibliography --cited %}
+  {% endif %}

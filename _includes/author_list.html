@@ -6,7 +6,7 @@
 
 {% assign names = authors | map: "display_name" | sort %}
 
-<ul class="list-unstyled">
+<ul class="list-unstyled font-sans">
   {% for name in names %}
     {% assign author = site.authors | where: "display_name", name | first %}
     {% unless author.hide %}

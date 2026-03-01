@@ -25,18 +25,17 @@ layout: default
   </div>
 </header>
 
-<div class="container pt-3 pb-5">
+<div class="container page-content pb-5">
   {% assign striped_content = page.content | strip | strip_html | strip_newlines %}
   {% unless striped_content == empty %}
   <div class="py-3">
-    <h4 class="mt-3 mb-3">Bio</h4>
+    <h1>Bio</h1>
     {{ content }}
   </div>
   {% endunless %}
 
 
-  <h3>Personal Information</h3>
-  <hr />
+  <h1>Personal Information</h1>
 
   {% if page.affiliation %}
     <div class="mt-2">
@@ -121,8 +120,7 @@ layout: default
   {% endif %}
 
   {% if filtered_publications.size > 0 %}
-  <h3 class="mt-5">Publications</h3>
-  <hr />
+  <h1>Publications</h1>
 
   <ol>
     {% for publication in filtered_publications %}

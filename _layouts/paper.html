@@ -69,7 +69,9 @@ layout: default
   
   {% if page.abstract %}
     <h1>Abstract</h1>
-    {{ page.abstract | markdownify}}
+    <div class="text-justify">
+      {{ page.abstract | markdownify}}
+    </div>
   {% endif %}
 
 
@@ -87,10 +89,7 @@ layout: default
 
 
 
-  {% unless bibliography_count --cited > 0 %}
-    <h1>References</h1>
-    {% bibliography --cited %}
-  {% endunless %}
+  {% include references.html %}
 
 
 

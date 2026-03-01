@@ -4,13 +4,11 @@ layout: page
 image: /assets/uploads/cropped-esoview1.jpg
 ---
 
-### Principal Investigator
---------------------------
+# Principal Investigator
 {% include author_list.html role="pi" %}
 
 <br />
 
-### Project Members
--------------------
+# Project Members
 {% include author_list.html %}
 
