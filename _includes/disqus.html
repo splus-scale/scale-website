@@ -1,9 +1,12 @@
-<div id="disqus_thread"></div>
-<script>
-  (function () {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://iagml.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-</script>
+{% unless site.disqus %}
+  <div class="mt-2" id="disqus_thread"></div>
+  <script>
+    (function () {
+      var d = document, s = d.createElement('script');
+      // s.src = 'https://iagml.disqus.com/embed.js';
+      s.src = 'https://{{ site.disqus }}.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+{% endunless %}
