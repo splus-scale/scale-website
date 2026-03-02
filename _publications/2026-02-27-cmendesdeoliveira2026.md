@@ -1,4 +1,5 @@
 ---
+slug: '1'
 title: "S-PLUS Clusters And Large-scale Environments (SCALE): A catalog of known systems in DR5 and a pilot study of Abell 4038"
 shorttitle: S-PLUS Clusters And Large-scale Environments (SCALE)
 journal: Astrophysical Journal
