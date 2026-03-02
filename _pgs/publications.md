@@ -11,12 +11,10 @@ title: Publications
     {% for pub in site.publications %}
       {% assign n = pub.authors | split: ',' | first | strip %}
       <li class="mt-2">
-        {% if pub.year %}[{{ pub.year | jsonify }}]{% endif %}
+        {% if pub.year %}<span class="badge text-bg-primary me-1">{{ pub.year | jsonify }}</span>{% endif %}
         <a 
           class="link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-          href="{{ pub.url }}">
-          {{ n }} et al. {{ pub.title }}
-        </a>
+          href="{{ pub.url }}">{{ n }} et al. {{ pub.title }}</a>
         {% if pub.status == 'inprep' %}
           <span class="badge text-bg-secondary rounded-pill ms-1">in prep.</span>
         {% elsif pub.status == 'submited' %}
