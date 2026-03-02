@@ -2,6 +2,7 @@
 username: nmcardoso
 display_name: Natanael M Cardoso
 github: nmcardoso
+gitlab: nmcardoso
 orcid: 0000-0002-2238-9665
 scholar: cGn84E0AAAAJ
 lattes: 2164167462832691

@@ -96,6 +96,15 @@ layout: default
   </div>
   {% endif %}
 
+  {% if page.gitlab %}
+    <div class="mt-2">
+      <i class="fa-brands fa-gitlab"></i> <b>Gitlab:</b> {{ page.gitlab }}
+      <a href="https://github.com/{{ page.github }}" target="_blank" class="ms-1">
+        <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>
+      </a>
+    </div>
+  {% endif %}
+
   {% if page.site %}
   <div class="mt-2">
     <i class="fa-solid fa-globe"></i> <b>Website:</b> {{ page.site }}
