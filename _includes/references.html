@@ -1,5 +1,7 @@
-  {% assign pub_count = bibliography_count --cited %}
-  {% if pub_count > 0 %}
-    <h1>References</h1>
-    {% bibliography --cited %}
-  {% endif %}
+{% capture bib %}{% bibliography --cited %}{% endcapture %}
+{% assign bib_striped = bib | newline_to_br | strip | strip_html | strip_newlines %}
+
+{% unless bib_striped == empty %}
+  <h1>References</h1>
+  {{ bib }}
+{% endunless %}
