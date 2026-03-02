@@ -4,67 +4,24 @@ image: /assets/uploads/blog-bg.jpg
 title: Publications
 ---
 
-{% assign inprep = site.publications | where: 'status', 'inprep' %}
-{% assign submited = site.publications | where: 'status', 'submited' %}
-{% assign published = site.publications | where: 'status', 'published' %}
-
-{% if published.size > 0 %}
-  <h1>Published</h1>
+{% if site.publications.size > 0 %}
+  <h1>Publications</h1>
 
   <ol class="font-sans">
-    {% for pub in published %}
-      {% assign a = pub.authors_objects | first %}
+    {% for pub in site.publications %}
+      {% assign n = pub.authors | split: ',' | first | strip %}
       <li class="mt-2">
+        {% if pub.year %}[{{ pub.year | jsonify }}]{% endif %}
         <a 
           class="link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
           href="{{ pub.url }}">
-          {{ pub.title }}
+          {{ n }} et al. {{ pub.title }}
         </a>
-        <span>
-          (<a class="link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{{ a.url }}">{{ a.display_name }}</a> et al.{% if pub.year %}, {{ pub.year | jsonify }}{% endif %})
-        </span>
-      </li>
-    {% endfor %}
-  </ol>
-{% endif %}
-
-
-{% if submited.size > 0 %}
-  <h1>Submited</h1>
-
-  <ol class="font-sans">
-    {% for pub in submited %}
-      {% assign a = pub.authors_objects | first %}
-      <li class="mt-2">
-        <a 
-          class="link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-          href="{{ pub.url }}">
-          {{ pub.title }}
-        </a>
-        <span>
-          (<a class="link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{{ a.url }}">{{ a.display_name }}</a> et al.{% if pub.year %}, {{ pub.year | jsonify }}{% endif %})
-        </span>
-      </li>
-    {% endfor %}
-  </ol>
-{% endif %}
-
-
-{% if inprep.size > 0 %}
-  <h1>In Preparation</h1>
-
-  <ol class="font-sans">
-    {% for pub in inprep %}
-      {% assign a = pub.authors_objects | first %}
-      <li class="mt-2">
-        <a 
-          class="link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-          href="{{ pub.url }}">
-          {{ pub.title }}
-        </a>
-        <span>
-          (<a class="link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{{ a.url }}">{{ a.display_name }}</a> et al.{% if pub.year %}, {{ pub.year | jsonify }}{% endif %})
-        </span>
+        {% if pub.status == 'inprep' %}
+          <span class="badge text-bg-secondary rounded-pill ms-1">in prep.</span>
+        {% elsif pub.status == 'submited' %}
+          <span class="badge text-bg-success rounded-pill ms-1">submited</span>
+        {% endif %}
       </li>
     {% endfor %}
   </ol>
