@@ -1,12 +1,10 @@
 ---
 title: "AstroInspect: a web-based system to organize, assess, and visually inspect astronomical objects"
 journal: Astronomical Journal
-authors: N. M. Cardoso
+authors: |
+  Natanael M. Cardoso, Claudia Mendes de Oliveira, Angela C. Krabbe, Analia V. Smith Castelli, Gustavo B. Oliveira Schwarz, Lilianne Nakazono, Ricardo Demarco, Maiara S. Carvalho, William Schoenell, Tiago Ribeiro, Antonio Kanaan and Antonio M. Saraiva
 year: 2026
 status: submited
-members:
-  - cmdeoliveira
-  - nmcardoso
 abstract: >
-  Um resumo
+  The rapid growth of imaging and spectroscopic surveys has intensified the need for efficient tools that support visual inspection, a practice that remains essential for tasks such as classification, catalog refinement, and validation of automated methods. Existing solutions, however, often require the use of multiple platforms and complex workflows to integrate heterogeneous data. To address this challenge, we present the first release of the AstroInspect ([https://astroinspect.github.io](https://astroinspect.github.io)), a web-based system which ensures seamless access to several astronomical resources. The system provides an intuitive graphical user interface (GUI) through which users can upload catalogs of objects defined by celestial coordinates. AstroInspect automatically enriches these catalogs with complementary information, including imaging, spectroscopic, and photometric data retrieved in real time from surveys such as the Sloan Digital Sky Survey (SDSS), the Legacy Surveys (LS), and the Southern Photometric Local Universe Survey (S-PLUS). As an example of its scientific utility, we used AstroInspect to identify H$$\alpha$$ emission-line galaxies within a 7 deg radius in the direction of the Hydra I cluster (also known as Abell 1060) by visual inspection. Using a candidate set of 981 galaxies selected from S-PLUS photometric data, we produced a catalog of 80 galaxies with confirmed H$$\alpha$$ emission. These results highlight the potential of AstroInspect to support efficient visual inspection workflows.
 ---
