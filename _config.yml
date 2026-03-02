@@ -71,9 +71,9 @@ defaults:
       path: ""
       type: "authors"
     values:
-      role: member
       layout: "author"
       permalink: "/authors/:title/"
+      role: member
   -
     scope:
       path: ""
@@ -86,9 +86,9 @@ defaults:
       path: ""
       type: "publications"
     values:
-      status: "published"
       layout: "paper"
       permalink: "/publications/:slug/"
+      status: "published"
   -
     scope:
       path: "assets/profiles"
