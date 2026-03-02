@@ -2,6 +2,6 @@
 {% assign bib_striped = bib | newline_to_br | strip | strip_html | strip_newlines %}
 
 {% unless bib_striped == empty %}
-  <h1>References</h1>
+  <h1>{% if include.icon %}<i class="fa-solid fa-quote-right fa-sm"></i> {% endif %}References</h1>
   {{ bib }}
 {% endunless %}
