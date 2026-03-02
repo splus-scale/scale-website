@@ -1,0 +1,20 @@
+{% assign variant = include.variant | default: 'primary' %}
+
+{% if variant == 'info' %}
+  {% assign icon_class = 'fa-solid fa-circle-info' %}
+{% elsif variant == 'warning' %}
+  {% assign icon_class = 'fa-solid fa-triangle-exclamation' %}
+{% elsif variant == 'danger' %}
+  {% assign icon_class = 'fa-solid fa-triangle-exclamation' %}
+{% elsif variant == 'success' %}
+  {% assign icon_class = 'fa-solid fa-circle-check' %}
+{% else %}
+  {% assign icon_class = 'fa-solid fa-circle-info' %}
+{% endif %}
+
+<div class="alert alert-{{ variant }} d-flex align-items-center font-sans" role="alert">
+  <i class="{{ icon_class }} me-1"></i>
+  <div>
+    {{ include.text }}
+  </div>
+</div>
