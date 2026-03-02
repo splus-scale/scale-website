@@ -1,0 +1,18 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb font-sans">
+    <li class="breadcrumb-item">
+      <a href="{{ site.url }}{{ site.baseurl }}">
+        home
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <!-- TODO: improve this markup for nested collections, e.g., /blog/tag/:slug -->
+      <a href="{{ site.url }}{{ site.baseurl }}/{{ page.collection }}">
+        {{ page.collection }}
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      {{ page.shorttitle | default: page.title }}
+    </li>
+  </ol>
+</nav>

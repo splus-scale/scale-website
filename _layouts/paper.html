@@ -8,30 +8,8 @@ layout: default
 {% include header.html image="/assets/img/authors_header_bg.jpg" title=title %}
 
 <div class="container pt-3 pb-5 page-content font-serif">
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb font-sans">
-      <li class="breadcrumb-item">
-        <a href="{{ site.url }}{{ site.baseurl }}">
-          Home
-        </a>
-      </li>
-      <li class="breadcrumb-item">
-        <a href="{{ site.url }}{{ site.baseurl }}/publications">
-          Publications
-        </a>
-      </li>
-      <li class="breadcrumb-item active" aria-current="page">
-        {{ page.shorttitle | default: page.title }}
-      </li>
-    </ol>
-  </nav>
-
-  {% for i in site.collection %}
-    {{i}} | 
-  {%endfor%}
-
-  collection: {% link publications %}
-
+  {% include breadcumb.html %}
+  
   {% if page.status == "inprep" %}
     {% include alert.html text="This paper is in preparation." %}
   {% endif %}
