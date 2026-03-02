@@ -34,12 +34,12 @@ The Table 1 of the AstroInspect paper contains all H$$\alpha$$ emission-line gal
     <tr><td>6</td><td>mag</td><td>sp_mag_r</td><td>S-PLUS DR5 magnitude in the r band</td></tr>
     <tr><td>7</td><td>mag</td><td>sp_mag_i</td><td>S-PLUS DR5 magnitude in the i band</td></tr>
     <tr><td>8</td><td>mag</td><td>sp_mag_z</td><td>S-PLUS DR5 magnitude in the z band</td></tr>
-    <tr><td>9</td><td>mag</td><td>sp_mag_F378</td><td>S-PLUS DR5 magnitude in the F378 band (Balmer jump / [O II])</td></tr>
+    <tr><td>9</td><td>mag</td><td>sp_mag_F378</td><td>S-PLUS DR5 magnitude in the F378 band (Balmer jump / [O\(_{\rm II}\)])</td></tr>
     <tr><td>10</td><td>mag</td><td>sp_mag_F395</td><td>S-PLUS DR5 magnitude in the F395 band (Ca H + K)</td></tr>
-    <tr><td>11</td><td>mag</td><td>sp_mag_F410</td><td>S-PLUS DR5 magnitude in the F410 band (Hδ)</td></tr>
+    <tr><td>11</td><td>mag</td><td>sp_mag_F410</td><td>S-PLUS DR5 magnitude in the F410 band (H\(\delta\))</td></tr>
     <tr><td>12</td><td>mag</td><td>sp_mag_F430</td><td>S-PLUS DR5 magnitude in the F430 band (G band)</td></tr>
     <tr><td>13</td><td>mag</td><td>sp_mag_F515</td><td>S-PLUS DR5 magnitude in the F515 band (Mg b triplet)</td></tr>
-    <tr><td>14</td><td>mag</td><td>sp_mag_F660</td><td>S-PLUS DR5 magnitude in the F660 band (Hα)</td></tr>
+    <tr><td>14</td><td>mag</td><td>sp_mag_F660</td><td>S-PLUS DR5 magnitude in the F660 band (H\(\alpha\))</td></tr>
     <tr><td>15</td><td>mag</td><td>sp_mag_F861</td><td>S-PLUS DR5 magnitude in the F861 band (Ca triplet)</td></tr>
     <tr>
       <td>16-27</td>
