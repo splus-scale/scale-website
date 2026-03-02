@@ -6,18 +6,20 @@
 
 {% assign names = authors | map: "display_name" | sort %}
 
-<ul class="list-unstyled font-sans">
+<div class="row row-cols-1 row-cols-md-3 g-4 font-sans">
   {% for name in names %}
     {% assign author = site.authors | where: "display_name", name | first %}
     {% unless author.hide %}
-      <li class="mt-4 d-flex align-items-center">
-        <a class="text-dark d-flex" href="/authors/{{ author.username }}">
+      <div class="col">
+        <a 
+          class="link-body-emphasis link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover d-flex" 
+          href="/authors/{{ author.username }}">
           <div class="d-inline-flex align-items-center">
-            {% include profile_pic.html author=author size=30 %}
-            <span class="ps-2 fs-5">{{ author.display_name }}</span>
+            {% include profile_pic.html author=author size=36 %}
+            <span class="ps-2 fs-4">{{ author.display_name }}</span>
           </div>
         </a>
-      </li>
+      </div>
     {% endunless %}
   {% endfor %}
-</ul>
+</div>
