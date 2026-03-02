@@ -71,6 +71,7 @@ defaults:
       path: ""
       type: "authors"
     values:
+      role: member
       layout: "author"
       permalink: "/authors/:title/"
   -

@@ -1,7 +1,7 @@
 {% if include.role %}
   {% assign authors = site.authors | where: "role", include.role %}
 {% else %}
- {% assign authors = site.authors | where: "role", empty %}
+  {% assign authors = site.authors | where: "role", empty %}
 {% endif %}
 
 {% assign names = authors | map: "display_name" | sort %}
