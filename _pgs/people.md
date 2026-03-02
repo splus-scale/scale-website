@@ -9,6 +9,6 @@ image: /assets/uploads/cropped-esoview1.jpg
 
 <br />
 
-# Project Members
-{% include author_list.html %}
+# Members
+{% include author_list.html role="member" %}
 
