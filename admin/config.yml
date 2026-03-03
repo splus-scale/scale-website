@@ -1,7 +1,7 @@
 backend:
   # name: test-repo
   name: github
-  repo: iagml/website
+  repo: splus-scale/scale-website
   branch: master
 media_folder: 'assets/uploads'
 collections:
