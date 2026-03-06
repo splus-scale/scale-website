@@ -14,7 +14,9 @@
         {% if pub.status == 'inprep' %}
           <span class="badge text-bg-secondary rounded-pill ms-1">in prep.</span>
         {% elsif pub.status == 'submited' %}
-          <span class="badge text-bg-success rounded-pill ms-1">submited</span>
+          <span class="badge text-bg-primary rounded-pill ms-1">submited</span>
+        {% elsif pub.status == 'accepted' %}
+          <span class="badge text-bg-success rounded-pill ms-1">accepted</span>
         {% endif %}
       </li>
     {% endfor %}
