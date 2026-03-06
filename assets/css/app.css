@@ -402,16 +402,11 @@ section.latest-posts .card a {
 .highlight {
   font-size: 1rem;
   overflow-x: auto;
-  margin-bottom: .2rem;
+  padding-top: .5rem;
 }
 
 .highlight pre {
   padding-bottom: .2rem;
-}
-
-.highlight {
-  padding-top: .7rem;
-  padding-bottom: 1.2rem;
 }
 
 a.post-author {
