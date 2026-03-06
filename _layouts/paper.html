@@ -18,6 +18,10 @@ layout: default
     {% include alert.html text="This paper has been submited to the journal." %}
   {% endif %}
 
+  {% if page.status == "accpeted" %}
+    {% include alert.html text="This paper has been accepted for publication" variant="success" %}
+  {% endif %}
+
 
   <h1><i class="fa-regular fa-rectangle-list fa-sm"></i> Publication info</h1>
   {% if page.title %}
