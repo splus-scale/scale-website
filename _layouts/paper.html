@@ -52,15 +52,15 @@ layout: default
   <div class="mt-3">
     <b>Access: </b> 
     {% if page.doi %}
-      <a href="https://doi.org/{{ page.doi }}" class="me-3">Publisher<i class="fa-solid fa-arrow-up-right-from-square fa-sm ms-1"></i></a>
+      <a href="https://doi.org/{{ page.doi }}" target="_blank" class="me-3">Publisher<i class="fa-solid fa-arrow-up-right-from-square fa-sm ms-1"></i></a>
     {% endif %}
 
     {% if page.preprint %}
-      <a href="{{ page.preprint }}" class="me-3">Preprint<i class="fa-solid fa-arrow-up-right-from-square fa-sm ms-1"></i></a>
+      <a href="{{ page.preprint }}" target="_blank" class="me-3">Preprint<i class="fa-solid fa-arrow-up-right-from-square fa-sm ms-1"></i></a>
     {% endif %}
 
     {% if page.ads %}
-      <a href="{{ page.ads }}" class="me-3">ADS<i class="fa-solid fa-arrow-up-right-from-square fa-sm ms-1"></i></a>
+      <a href="{{ page.ads }}" target="_blank" class="me-3">ADS<i class="fa-solid fa-arrow-up-right-from-square fa-sm ms-1"></i></a>
     {% endif %}
   </div>
   {% endif %}
