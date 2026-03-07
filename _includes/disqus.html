@@ -1,5 +1,5 @@
-{% unless site.disqus %}
-  <div class="mt-2" id="disqus_thread"></div>
+{% if site.disqus %}
+  <div id="disqus_thread"></div>
   <script>
     (function () {
       var d = document, s = d.createElement('script');
@@ -9,4 +9,4 @@
       (d.head || d.body).appendChild(s);
     })();
   </script>
-{% endunless %}
+{% endif %}
