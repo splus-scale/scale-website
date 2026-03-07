@@ -117,8 +117,9 @@ layout: default
 
 
 
-
-  <div class="mt-5 pt-3 mb-2">
-    {% include disqus.html %}
-  </div>
+  {% if site.disqus %}
+    <div class="mt-5 pt-3 mb-2">
+      {% include disqus.html %}
+    </div>
+  {% endif %}
 </div>
