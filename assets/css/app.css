@@ -379,21 +379,6 @@ section.latest-posts .card a {
   font-size: 1rem;
 }
 
-.post-image-container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.post-image-container .img {
-  background-color: #c5c5c5; /* fallback color */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%; 
-  height: 100%;
-}
-
 .page-content {
   font-size: 1.2rem;
   overflow: auto;
@@ -418,6 +403,20 @@ a.post-author:hover {
   text-decoration: underline;
 }
 
+.post-image-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.post-image-container .img {
+  background-color: #c5c5c5; /* fallback color */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%; 
+  height: 100%;
+}
 
 
 

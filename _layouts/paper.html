@@ -100,6 +100,15 @@ layout: default
   {% if page.bibtex %}
     <h1><i class="fa-brands fa-tex fa-sm"></i> Citation</h1>
     {% highlight bibtex %}{{ page.bibtex }}{% endhighlight %}
+    <textarea class="d-none" id="bibtex-value">{{ page.bibtex }}</textarea>
+    <button 
+      data-copy-element="#bibtex-value"
+      data-success="Citation successfully copied to clipboard"
+      data-error="An error occurred, please select the text and copy the reference manually"
+      type="button"
+      class="btn btn-outline-primary font-sans">
+      <i class="fa-regular fa-copy fa-sm me-1"></i> Copy citation to clipboard
+    </button>
   {% endif %}
 
 
