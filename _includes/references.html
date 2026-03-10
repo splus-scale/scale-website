@@ -3,5 +3,7 @@
 
 {% unless bib_striped == empty %}
   <h1>{% if include.icon %}<i class="fa-solid fa-quote-right fa-sm"></i> {% endif %}References</h1>
-  {{ bib }}
+  <div class="text-break">
+    {{ bib }}
+  </div>
 {% endunless %}
