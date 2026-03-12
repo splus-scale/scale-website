@@ -24,6 +24,8 @@ social:
   links: 
     - https://github.com/splus-scale
 
+# https://favicon.io/favicon-converter/
+
 paginate: 5
 paginate_path: "/blog/page:num"
 
