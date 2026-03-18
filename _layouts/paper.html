@@ -51,16 +51,74 @@ layout: default
   {% if page.preprint or page.doi or page.ads %}
   <div class="mt-3">
     <b>Access: </b> 
-    {% if page.doi %}
-      <a href="https://doi.org/{{ page.doi }}" target="_blank" class="me-3">Publisher<i class="fa-solid fa-arrow-up-right-from-square fa-sm ms-1"></i></a>
+    {% if page.pdf %}
+      <a 
+        class="btn btn-outline-primary btn-sm font-sans me-2" 
+        href="{{ page.pdf }}" 
+        target="_blank" 
+        role="button">
+        <i class="fa-regular fa-file-pdf"></i> PDF
+      </a>
+    {% endif %}
+
+    {% if page.publisher %}
+      <a 
+        class="btn btn-outline-primary btn-sm font-sans me-2" 
+        href="https://doi.org/{{ page.doi }}" 
+        target="_blank" 
+        role="button">
+        <i class="fa-regular fa-file"></i> Publisher <i class="fa-solid fa-circle-check"></i>
+      </a>
     {% endif %}
 
     {% if page.preprint %}
-      <a href="{{ page.preprint }}" target="_blank" class="me-3">Preprint<i class="fa-solid fa-arrow-up-right-from-square fa-sm ms-1"></i></a>
+      <a 
+        class="btn btn-outline-primary btn-sm font-sans me-2" 
+        href="{{ page.preprint }}" 
+        target="_blank" 
+        role="button">
+        <i class="fa-regular fa-file"></i> Preprint
+      </a>
+    {% endif %}
+
+    {% if page.arxiv %}
+      <a 
+        class="btn btn-outline-primary btn-sm font-sans me-2" 
+        href="{{ page.arxiv }}" 
+        target="_blank" 
+        role="button">
+        <i class="fa-regular fa-file"></i> ArXiv
+      </a>
+    {% endif %}
+
+    {% if page.techrxiv %}
+      <a 
+        class="btn btn-outline-primary btn-sm font-sans me-2" 
+        href="{{ page.techrxiv }}" 
+        target="_blank" 
+        role="button">
+        <i class="fa-regular fa-file"></i> TechRxiv
+      </a>
+    {% endif %}
+
+    {% if page.pubmed %}
+      <a 
+        class="btn btn-outline-primary btn-sm font-sans me-2" 
+        href="{{ page.pubmed }}" 
+        target="_blank" 
+        role="button">
+        <i class="fa-regular fa-file"></i> Pubmed
+      </a>
     {% endif %}
 
     {% if page.ads %}
-      <a href="{{ page.ads }}" target="_blank" class="me-3">ADS<i class="fa-solid fa-arrow-up-right-from-square fa-sm ms-1"></i></a>
+      <a 
+        class="btn btn-outline-primary btn-sm font-sans me-2" 
+        href="{{ page.ads }}" 
+        target="_blank" 
+        role="button">
+        <i class="fa-regular fa-file"></i> ADS
+      </a>
     {% endif %}
   </div>
   {% endif %}
@@ -86,6 +144,22 @@ layout: default
     <h1><i class="fa-regular fa-folder-open fa-sm"></i> Online material</h1>
     {{ content }}
   {% endunless %}
+
+
+
+
+
+  {% if page.files %}
+    <h2>Files</h2>
+    {% assign resources = page.files | map: 'resource' | uniq %}
+    {% for res in resources %}
+      {% assign files = page.files | where: 'resource', res %}
+      <h3>{{ res }}</h3>
+      {% for file in files %}
+        {% include download.html name=file.name url=file.url %}
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
 
 
 
