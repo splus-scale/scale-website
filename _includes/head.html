@@ -3,6 +3,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  {% if page.doi %}
+    <meta name="dc.identifier" content="{{ page.doi }}" />
+    <meta name="citation_doi" content="{{ page.doi }}" />
+    {% comment %}
+    <meta name="citation_pii" content="S0099133307000912" />
+    <meta name="citation_issn" content="0099-1333" />
+    <meta name="citation_volume" content="33" />
+    <meta name="citation_lastpage" content="506" />
+    <meta name="citation_issue" content="4" />
+    <meta name="citation_publisher" content="JAI" />
+    <meta name="citation_firstpage" content="501" />
+    <meta name="citation_title" content="A Study of HTML Title Tag Creation Behavior of Academic Web Sites" />
+    <meta name="citation_journal_title" content="The Journal of Academic Librarianship" />
+    <meta name="citation_type" content="JOUR" />
+    <meta name="citation_article_type" content="Full-length article" />
+    <meta property=og:description content="The HTML title tag information should identify and describe exactly what a Web page contains. This paper analyzes the Title element and raises a signi…" />
+    <meta name="citation_publication_date" content="2007/07/01" />
+    <meta name="citation_online_date" content="2007/05/02" />
+    {% endcomment %}
+  {% endif %}
+
   <link rel="icon" type="image/x-icon" href="{{ site.url }}{{ site.baseurl }}/assets/img/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}{{ site.baseurl }}/assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}{{ site.baseurl }}/assets/img/favicon-32x32.png">
