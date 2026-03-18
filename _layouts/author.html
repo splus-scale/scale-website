@@ -87,6 +87,15 @@ layout: default
   </div>
   {% endif %}
 
+  {% if page.scopus %}
+  <div class="mt-2">
+    <i class="fa-solid fa-user"></i> <b>Scopus:</b> {{ page.scopus }}
+    <a href="https://www.scopus.com/authid/detail.uri?authorId={{ page.scopus }}" target="_blank" class="ms-1">
+      <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>
+    </a> 
+  </div>
+  {% endif %}
+
   {% if page.github %}
   <div class="mt-2">
     <i class="fa-brands fa-github"></i> <b>Github:</b> {{ page.github }}
