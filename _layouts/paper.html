@@ -101,6 +101,16 @@ layout: default
       </a>
     {% endif %}
 
+    {% if page.biorxiv %}
+      <a 
+        class="btn btn-outline-primary btn-sm font-sans me-2" 
+        href="{{ page.biorxiv }}" 
+        target="_blank" 
+        role="button">
+        <i class="fa-regular fa-file"></i> BioRxiv
+      </a>
+    {% endif %}
+
     {% if page.pubmed %}
       <a 
         class="btn btn-outline-primary btn-sm font-sans me-2" 
