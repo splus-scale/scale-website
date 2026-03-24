@@ -154,7 +154,7 @@ layout: default
     {% assign resources = page.files | map: 'resource' | uniq %}
     {% for res in resources %}
       {% assign files = page.files | where: 'resource', res %}
-      <h3>{{ res }}</h3>
+      <p class="fw-bold font-sans fs-5 mb-0">{{ res }}</p>
       {% for file in files %}
         {% include download.html name=file.name url=file.url %}
       {% endfor %}
