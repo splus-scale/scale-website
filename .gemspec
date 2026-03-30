@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "rouge"
 
   # Compatibilidade (você já fixou isso no Gemfile)
-  spec.add_runtime_dependency "activesupport", "~> 6.0"
+  spec.add_runtime_dependency "activesupport", ">= 7.0", "< 8.0"
 
   spec.required_ruby_version = ">= 3.0"
 
