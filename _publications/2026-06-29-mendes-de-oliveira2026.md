@@ -1,8 +1,9 @@
 ---
 title: "S-PLUS Clusters And Large-scale Environments (SCALE): I. A catalog of known systems in DR5 and a pilot study of Abell 4038"
 shorttitle: S-PLUS Clusters And Large-scale Environments (SCALE)
-venue: Astrophysical Journal
+journal: Astrophysical Journal
 type: journal
+year: 2026
 authors: |
   C. Mendes de Oliveira, N. M. Cardoso, P. A. A. Lopes, A. L. B. Ribeiro, D. E. Olave-Rojas,
   A. Krabbe, L. Sodre Jr., R. Demarco, A. V. Smith Castelli, R. Cid Fernandes,
